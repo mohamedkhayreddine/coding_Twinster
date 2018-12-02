@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Api Put Request - Twinster</title>
+</h:head>
+<h:body>
+	
+	<h:form>
+	    
+		<h:commandButton value="Do Api Request" action="#{ApiRequestBean.getSizes}"></h:commandButton>
+	</h:form>
+	<h:dataTable value = "#{ApiRequestBean.result}" var = "res">
+   
+   <h:column>    				
+      <f:facet name = "header">Product</f:facet>    
+      product_1 
+   		
+   </h:column>
+   
+   <h:column>
+      <f:facet name = "header">TIGHT</f:facet>
+      #{res}
+   </h:column>
+   
+   <h:column>
+      <f:facet name = "header">NORMAL</f:facet>
+    #{res}
+   </h:column>
+   
+   <h:column>
+      <f:facet name = "header">LOOSE</f:facet>
+    #{res}
+   </h:column>
+</h:dataTable>
+</h:body>
+</html>
